@@ -30,7 +30,8 @@ img {
 }
 
 .slider {
-    width: 60%;
+    width: 70%;
+    min-width: 800px;
     margin: 0 auto;
     background-color: #fff;
     position: relative;
@@ -41,7 +42,7 @@ img {
 }
 
 .item {
-    display: none;
+    /* display: none; */
 }
 
 /* BUTTONS */

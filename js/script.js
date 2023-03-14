@@ -20,8 +20,57 @@ for (let i = 0; i < imagesArray.length; i++) {
 
 // Creo punto di partenza (visualizzo immagine 0 di array)
 // Prelevo i contenitori delle immagini in html
-const itemsArray = document.getElementsByClassName("item")
+const itemsArray = document.getElementsByClassName("item");
 console.log(itemsArray);
 
+// Assegno alla posizione 0 dell'array la classe active creata su css
 let activeItemIndex = 0;
-itemsArray[activeItemIndex].classList.add("active")
+itemsArray[activeItemIndex].classList.add("active");
+
+// GESTIONE BOTTONI NEXT PREV
+// Creeo variabile buttons
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+// gestisco click next
+nextBtn.addEventListener("click", function() {
+    // al click si riattiva il bottone per tornare indietro
+    prevBtn.classList.remove("hidden");
+
+    if (activeItemIndex < (itemsArray.length - 1)) {
+        // rimuovo lo stato active dalla array-item
+        itemsArray[activeItemIndex].classList.remove("active");
+
+        // incremento la posizione dell'array
+        activeItemIndex++;
+
+        // rimetto lo stato active dalla array-item
+        itemsArray[activeItemIndex].classList.add("active");
+        
+        // All'ultimo array-item rimuovo il bottone next
+        if (activeItemIndex === itemsArray.length - 1) {
+            nextBtn.classList.add("hidden");
+        };
+    };
+});
+
+// Nascondo il prevBtn di default 
+prevBtn.classList.add("hidden")
+// gestisco il click prev
+prevBtn.addEventListener("click", function() {
+    nextBtn.classList.remove("hidden")
+
+    // rimuovo lo stato active dalla array-item
+    itemsArray[activeItemIndex].classList.remove("active");
+
+    // decremento la posizione dell'array
+    activeItemIndex--;
+
+    // rimetto lo stato active dalla array-item
+    itemsArray[activeItemIndex].classList.add("active");
+    
+    // All'ultimo array-item rimuovo il bottone prev
+    if (activeItemIndex === 0) {
+        prevBtn.classList.add("hidden");
+    };
+})

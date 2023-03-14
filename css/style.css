@@ -10,16 +10,6 @@ img {
     display: block;
 }
 
-/* COMMON JS UTILITY */
-.item.active {
-    display: block;
-}
-
-.hidden {
-    display: none;
-}
-/* /COMMON JS UTILITY */
-
 /* LAYOUT */
 .container {
     width: 100%;
@@ -60,6 +50,16 @@ img {
     border-radius: 30px;
     cursor: pointer;
 }
+/* COMMON JS UTILITY */
+.item.active {
+    display: block;
+}
+
+
+.hidden {
+    display: none;
+}
+/* /COMMON JS UTILITY */
 
 .prev {
     top: 20px;

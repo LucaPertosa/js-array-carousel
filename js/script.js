@@ -17,3 +17,11 @@ for (let i = 0; i < imagesArray.length; i++) {
     
    itemsContainer.innerHTML += sliderItem;
 }
+
+// Creo punto di partenza (visualizzo immagine 0 di array)
+// Prelevo i contenitori delle immagini in html
+const itemsArray = document.getElementsByClassName("item")
+console.log(itemsArray);
+
+let activeItemIndex = 0;
+itemsArray[activeItemIndex].classList.add("active")
